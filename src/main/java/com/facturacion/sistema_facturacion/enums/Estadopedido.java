@@ -1,5 +1,9 @@
 package com.facturacion.sistema_facturacion.enums;
 
-public class Estadopedido {
+public enum Estadopedido {
+    PENDIENTE,
+    CONFIRMADO,
+    ENTREGADO,
+    CANCELADO
     
 }
