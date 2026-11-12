@@ -1,5 +1,7 @@
 package com.facturacion.sistema_facturacion.enums;
 
-public class tipocliente {
+public enum tipocliente {
+    NATURAL,
+    EMPRESA
     
 }
