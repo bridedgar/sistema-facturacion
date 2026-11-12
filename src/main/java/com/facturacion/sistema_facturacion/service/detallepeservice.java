@@ -28,6 +28,10 @@ public class detallepeservice {
         return detalleRepository.findById(id).orElse(null);
     }
 
+    public List<detallepeentity> listarPorPedido(Long idPedido) {
+    return detalleRepository.listarPorPedido(idPedido);
+    }
+
     public detallepeentity actualizar(Long id, detallepeentity detalle) {
         if (!detalleRepository.existsById(id)) {
             return null;
