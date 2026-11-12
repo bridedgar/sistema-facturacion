@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gestión Comercial</title>
+
+    <!-- ESTILOS DE CLAUDE -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/complemento.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                GC
+            </div>
+
+            <div class="logo-text">
+
+                <strong>
+                    Gestión Comercial
+                </strong>
+
+                <span>
+                    Panel administrativo
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- GENERAL -->
+
+        <p class="menu-titulo">
+            General
+        </p>
+
+        <nav aria-label="General">
+
+            <button
+                type="button"
+                data-ir="dashboard">
+
+                Resumen
+
+            </button>
+
+        </nav>
+
+
+        <!-- GESTIÓN -->
+
+        <p class="menu-titulo">
+            Gestión
+        </p>
+
+        <nav aria-label="Gestión">
+
+            <button
+                type="button"
+                data-ir="clientes">
+
+                Clientes
+
+            </button>
+
+            <button
+                type="button"
+                data-ir="productos">
+
+                Productos
+
+            </button>
+
+        </nav>
+
+
+        <!-- OPERACIÓN -->
+
+        <p class="menu-titulo">
+            Operación
+        </p>
+
+        <nav aria-label="Operación">
+
+            <button
+                type="button"
+                data-ir="pedidos">
+
+                Pedidos
+
+            </button>
+
+            <button
+                type="button"
+                data-ir="detalles">
+
+                Detalle de pedidos
+
+            </button>
+
+            <button
+                type="button"
+                data-ir="pagos">
+
+                Pagos
+
+            </button>
+
+        </nav>
+
+
+        <!-- ANÁLISIS -->
+
+        <p class="menu-titulo">
+            Análisis
+        </p>
+
+        <nav aria-label="Análisis">
+
+            <button
+                type="button"
+                data-ir="informes">
+
+                Informes
+
+            </button>
+
+        </nav>
+
+
+        <!-- USUARIO -->
+
+        <div class="usuario-menu">
+
+            <div
+                class="usuario-avatar"
+                id="usuarioAvatar">
+
+                AD
+
+            </div>
+
+            <div>
+
+                <strong id="usuarioNombre">
+                    Administrador
+                </strong>
+
+                <span id="usuarioEstado">
+                    Sesión activa
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         CONTENIDO
+         ===================================================== -->
+
+    <main class="contenido">
+
+
+        <!-- =================================================
+             RESUMEN
+             ================================================= -->
+
+        <section
+            class="vista"
+            id="vista-dashboard"
+            hidden>
+
+            <header class="encabezado">
+
+                <div>
+
+                    <div class="ruta">
+                        Panel / Resumen
+                    </div>
+
+                    <h1>
+                        Resumen operativo
+                    </h1>
+
+                    <p id="fechaHoy"></p>
+
+                </div>
+
+
+                <button
+                    class="boton-principal"
+                    type="button"
+                    data-nuevo="pedidos">
+
+                    + Nuevo pedido
+
+                </button>
+
+            </header>
+
+
+            <!-- TARJETAS -->
+
+            <div class="tarjetas">
+
+                <article class="tarjeta">
+
+                    <small>
+                        CLIENTES
+                    </small>
+
+                    <h3 id="kpiClientes">
+                        0
+                    </h3>
+
+                    <p id="kpiClientesTxt"></p>
+
+                </article>
+
+
+                <article class="tarjeta">
+
+                    <small>
+                        PRODUCTOS
+                    </small>
+
+                    <h3 id="kpiProductos">
+                        0
+                    </h3>
+
+                    <p id="kpiProductosTxt"></p>
+
+                </article>
+
+
+                <article class="tarjeta">
+
+                    <small>
+                        PEDIDOS
+                    </small>
+
+                    <h3 id="kpiPedidos">
+                        0
+                    </h3>
+
+                    <p id="kpiPedidosTxt"></p>
+
+                </article>
+
+
+                <article class="tarjeta">
+
+                    <small>
+                        INGRESOS COBRADOS
+                    </small>
+
+                    <h3 id="kpiIngresos">
+                        $0
+                    </h3>
+
+                    <p id="kpiIngresosTxt"></p>
+
+                </article>
+
+            </div>
+
+
+            <!-- FLUJO DE OPERACIÓN -->
+
+            <div class="operacion">
+
+                <div class="panel-titulo">
+
+                    <div>
+
+                        <h2>
+                            Flujo de operación
+                        </h2>
+
+                        <p>
+                            Los tres pasos para completar
+                            una venta, de principio a fin.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="operacion-grid">
+
+                    <div
+                        class="operacion-item"
+                        role="button"
+                        tabindex="0"
+                        data-ir="pedidos">
+
+                        <span>
+                            PASO 01
+                        </span>
+
+                        <h3>
+                            Registrar el pedido
+                        </h3>
+
+                        <p>
+                            Asocia el cliente,
+                            la fecha y el estado
+                            inicial de la venta.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="operacion-item"
+                        role="button"
+                        tabindex="0"
+                        data-ir="detalles">
+
+                        <span>
+                            PASO 02
+                        </span>
+
+                        <h3>
+                            Agregar productos
+                        </h3>
+
+                        <p>
+                            Define cantidades y
+                            precios unitarios para
+                            calcular el total.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="operacion-item"
+                        role="button"
+                        tabindex="0"
+                        data-ir="pagos">
+
+                        <span>
+                            PASO 03
+                        </span>
+
+                        <h3>
+                            Registrar el pago
+                        </h3>
+
+                        <p>
+                            Controla abonos,
+                            método de pago y
+                            saldo pendiente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PEDIDOS RECIENTES -->
+
+            <div class="panel">
+
+                <div class="panel-titulo">
+
+                    <div>
+
+                        <h2>
+                            Pedidos recientes
+                        </h2>
+
+                        <p>
+                            Los cinco movimientos
+                            más nuevos.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="boton-secundario"
+                        type="button"
+                        data-ir="pedidos">
+
+                        Ver todos
+
+                    </button>
+
+                </div>
+
+
+                <div class="tabla-wrap">
+
+                    <table id="tablaRecientes">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Pedido
+                                </th>
+
+                                <th>
+                                    Cliente
+                                </th>
+
+                                <th>
+                                    Fecha
+                                </th>
+
+                                <th>
+                                    Estado
+                                </th>
+
+                                <th class="num">
+                                    Total
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CLIENTES
+             ================================================= -->
+
+        <section
+            class="vista"
+            id="vista-clientes"
+            data-entidad="clientes"
+            hidden>
+        </section>
+
+
+        <!-- =================================================
+             PRODUCTOS
+             ================================================= -->
+
+        <section
+            class="vista"
+            id="vista-productos"
+            data-entidad="productos"
+            hidden>
+        </section>
+
+
+        <!-- =================================================
+             PEDIDOS
+             ================================================= -->
+
+        <section
+            class="vista"
+            id="vista-pedidos"
+            data-entidad="pedidos"
+            hidden>
+        </section>
+
+
+        <!-- =================================================
+             DETALLES
+             ================================================= -->
+
+        <section
+            class="vista"
+            id="vista-detalles"
+            data-entidad="detalles"
+            hidden>
+        </section>
+
+
+        <!-- =================================================
+             PAGOS
+             ================================================= -->
+
+        <section
+            class="vista"
+            id="vista-pagos"
+            data-entidad="pagos"
+            hidden>
+        </section>
+
+
+        <!-- =================================================
+             INFORMES
+             ================================================= -->
+
+        <section
+            class="vista"
+            id="vista-informes"
+            hidden>
+
+
+            <header class="encabezado">
+
+                <div>
+
+                    <div class="ruta">
+                        Análisis / Informes
+                    </div>
+
+                    <h1>
+                        Informes
+                    </h1>
+
+                    <p>
+                        Indicadores calculados con
+                        los pedidos no cancelados.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="boton-secundario"
+                    type="button"
+                    id="btnRestablecer">
+
+                    Actualizar datos
+
+                </button>
+
+            </header>
+
+
+            <!-- MÉTRICAS -->
+
+            <div class="metricas">
+
+                <div class="metrica">
+
+                    <span>
+                        Ingresos cobrados
+                    </span>
+
+                    <strong id="infCobrado">
+                        $0
+                    </strong>
+
+                    <small id="infCobradoTxt">
+                    </small>
+
+                </div>
+
+
+                <div class="metrica">
+
+                    <span>
+                        Cuentas por cobrar
+                    </span>
+
+                    <strong id="infPorCobrar">
+                        $0
+                    </strong>
+
+                    <small id="infPorCobrarTxt">
+                    </small>
+
+                </div>
+
+
+                <div class="metrica">
+
+                    <span>
+                        Ticket promedio
+                    </span>
+
+                    <strong id="infTicket">
+                        $0
+                    </strong>
+
+                    <small id="infTicketTxt">
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- GRÁFICAS -->
+
+            <div class="dos-col">
+
+
+                <!-- PRODUCTOS -->
+
+                <div class="panel">
+
+                    <div class="panel-titulo">
+
+                        <div>
+
+                            <h2>
+                                Ventas por producto
+                            </h2>
+
+                            <p>
+                                Los seis productos
+                                con mayor facturación.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="infProductos">
+                    </div>
+
+                </div>
+
+
+                <!-- ESTADOS -->
+
+                <div class="panel">
+
+                    <div class="panel-titulo">
+
+                        <div>
+
+                            <h2>
+                                Pedidos por estado
+                            </h2>
+
+                            <p>
+                                Distribución actual
+                                de la operación.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="infEstados">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEJORES CLIENTES -->
+
+            <div class="panel">
+
+                <div class="panel-titulo">
+
+                    <div>
+
+                        <h2>
+                            Mejores clientes
+                        </h2>
+
+                        <p>
+                            Ordenados por valor facturado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tabla-wrap">
+
+                    <table id="tablaTopClientes">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Cliente
+                                </th>
+
+                                <th class="num">
+                                    Pedidos
+                                </th>
+
+                                <th class="num">
+                                    Facturado
+                                </th>
+
+                                <th class="num">
+                                    Saldo
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+     ===================================================== -->
+
+<div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite">
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.facturacion.sistema_facturacion.dto.loginrequestdto;
-import com.facturacion.sistema_facturacion.dto.loginresponsedto;
+import com.facturacion.sistema_facturacion.model.dto.loginrequestdto;
+import com.facturacion.sistema_facturacion.model.dto.loginresponsedto;
 import com.facturacion.sistema_facturacion.model.entity.usuarioentity;
 import com.facturacion.sistema_facturacion.service.usuarioservice;
 

@@ -1,4 +1,4 @@
-package com.facturacion.sistema_facturacion.dto;
+package com.facturacion.sistema_facturacion.model.dto;
 
 import java.util.Map;
 import lombok.AllArgsConstructor;

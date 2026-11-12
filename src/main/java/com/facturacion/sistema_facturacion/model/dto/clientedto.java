@@ -1,4 +1,4 @@
-package com.facturacion.sistema_facturacion.dto;
+package com.facturacion.sistema_facturacion.model.dto;
 
 import com.facturacion.sistema_facturacion.enums.tipocliente;
 import lombok.AllArgsConstructor;

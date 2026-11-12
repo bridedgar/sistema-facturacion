@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.facturacion.sistema_facturacion.dto.informeventasdto;
+import com.facturacion.sistema_facturacion.model.dto.informeventasdto;
 import com.facturacion.sistema_facturacion.enums.Estadopago;
 import com.facturacion.sistema_facturacion.enums.Estadopedido;
 import com.facturacion.sistema_facturacion.model.entity.pagoentity;

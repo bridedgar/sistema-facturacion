@@ -45,4 +45,8 @@ public class usuarioservice {
         usuarioRepository.deleteById(id);
         return true;
     }
+
+    public usuarioentity autenticar(String correo, String contrasena) {
+        return usuarioRepository.findByCorreoAndContrasena(correo, contrasena).orElse(null);
+    }
 }

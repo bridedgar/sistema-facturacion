@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.facturacion.sistema_facturacion.dto.productodto;
+import com.facturacion.sistema_facturacion.model.dto.productodto;
 import com.facturacion.sistema_facturacion.mapper.Productomapper;
 import com.facturacion.sistema_facturacion.model.entity.productoentity;
 import com.facturacion.sistema_facturacion.service.productservice;

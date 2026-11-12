@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1">
+
+    <title>
+        Iniciar sesión · Gestión Comercial
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/css/styles.css">
+
+    <link
+        rel="stylesheet"
+        href="/css/complemento.css">
+
+
+    <style>
+
+        /* =====================================================
+           LOGIN
+           No modifica styles.css ni complemento.css.
+           Utiliza las mismas variables visuales de Claude.
+           ===================================================== */
+
+        body.login-body {
+            min-height: 100vh;
+            background: var(--fondo);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 24px;
+        }
+
+
+        .login-contenedor {
+
+            width: 100%;
+            max-width: 430px;
+
+        }
+
+
+        .login-marca {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        .login-marca-icon {
+
+            width: 52px;
+            height: 52px;
+
+            border-radius: 15px;
+
+            background: var(--lima);
+            color: var(--verde-oscuro);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+
+            margin-right: 13px;
+
+        }
+
+
+        .login-marca-texto {
+
+            display: flex;
+            flex-direction: column;
+
+        }
+
+
+        .login-marca-texto strong {
+
+            font-family: "Manrope", sans-serif;
+            font-size: 20px;
+            color: var(--verde-oscuro);
+
+        }
+
+
+        .login-marca-texto span {
+
+            color: var(--texto-secundario);
+            font-size: 12px;
+
+        }
+
+
+        .login-panel {
+
+            background: var(--blanco);
+
+            border: 1px solid var(--borde);
+
+            border-radius: var(--radio);
+
+            padding: 34px;
+
+            box-shadow: var(--sombra);
+
+        }
+
+
+        .login-panel h1 {
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 25px;
+
+            color: var(--texto);
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .login-panel > p {
+
+            color: var(--texto-secundario);
+
+            font-size: 13px;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        .login-form {
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 18px;
+
+        }
+
+
+        .login-campo {
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 7px;
+
+        }
+
+
+        .login-campo label {
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            color: var(--texto);
+
+        }
+
+
+        .login-campo input {
+
+            width: 100%;
+
+            height: 44px;
+
+            border: 1px solid var(--borde-fuerte);
+
+            border-radius: 9px;
+
+            background: #fcfdfb;
+
+            padding: 0 13px;
+
+            outline: none;
+
+            color: var(--texto);
+
+            font-size: 13px;
+
+            transition:
+                border .2s ease,
+                box-shadow .2s ease;
+
+        }
+
+
+        .login-campo input:focus {
+
+            border-color: var(--verde);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(31, 107, 69, .08);
+
+        }
+
+
+        .login-boton {
+
+            width: 100%;
+
+            height: 44px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: var(--verde);
+
+            color: white;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            font-size: 13px;
+
+            margin-top: 4px;
+
+            transition:
+                background .2s ease,
+                transform .15s ease;
+
+        }
+
+
+        .login-boton:hover {
+
+            background: var(--verde-hover);
+
+        }
+
+
+        .login-boton:active {
+
+            transform: translateY(1px);
+
+        }
+
+
+        .login-boton:disabled {
+
+            opacity: .65;
+
+            cursor: wait;
+
+        }
+
+
+        .login-mensaje {
+
+            padding: 12px 14px;
+
+            border-radius: 9px;
+
+            font-size: 13px;
+
+            background: #fae6e6;
+
+            color: #a63d3d;
+
+        }
+
+
+        .login-mensaje.ok {
+
+            background: #e4f2e4;
+
+            color: #287044;
+
+        }
+
+
+        .login-pie {
+
+            text-align: center;
+
+            margin-top: 18px;
+
+            color: var(--texto-secundario);
+
+            font-size: 11px;
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            body.login-body {
+
+                padding: 16px;
+
+            }
+
+            .login-panel {
+
+                padding: 26px 20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="login-body">
+
+
+<div class="login-contenedor">
+
+
+    <!-- MARCA -->
+
+    <div class="login-marca">
+
+        <div class="login-marca-icon">
+            GC
+        </div>
+
+        <div class="login-marca-texto">
+
+            <strong>
+                Gestión Comercial
+            </strong>
+
+            <span>
+                Panel administrativo
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- PANEL -->
+
+    <div class="login-panel">
+
+        <h1>
+            Iniciar sesión
+        </h1>
+
+        <p>
+            Ingresa con las credenciales
+            de un empleado autorizado.
+        </p>
+
+
+        <form
+            id="loginForm"
+            class="login-form">
+
+
+            <!-- CORREO -->
+
+            <div class="login-campo">
+
+                <label for="correo">
+                    Correo electrónico
+                </label>
+
+                <input
+                    id="correo"
+                    name="correo"
+                    type="email"
+                    autocomplete="username"
+                    placeholder="correo@empresa.com"
+                    required>
+
+            </div>
+
+
+            <!-- CONTRASEÑA -->
+
+            <div class="login-campo">
+
+                <label for="contrasena">
+                    Contraseña
+                </label>
+
+                <input
+                    id="contrasena"
+                    name="contrasena"
+                    type="password"
+                    autocomplete="current-password"
+                    placeholder="Ingresa tu contraseña"
+                    required>
+
+            </div>
+
+
+            <!-- MENSAJE -->
+
+            <div
+                id="loginMensaje"
+                class="login-mensaje"
+                hidden>
+            </div>
+
+
+            <!-- BOTÓN -->
+
+            <button
+                id="loginBoton"
+                class="login-boton"
+                type="submit">
+
+                Iniciar sesión
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+    <div class="login-pie">
+
+        Sistema de gestión comercial
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+    /* =====================================================
+       LOGIN
+       Conecta directamente con:
+       POST /api/auth/login
+       ===================================================== */
+
+    (() => {
+
+        'use strict';
+
+
+        const form =
+            document.getElementById(
+                'loginForm'
+            );
+
+
+        const correo =
+            document.getElementById(
+                'correo'
+            );
+
+
+        const contrasena =
+            document.getElementById(
+                'contrasena'
+            );
+
+
+        const mensaje =
+            document.getElementById(
+                'loginMensaje'
+            );
+
+
+        const boton =
+            document.getElementById(
+                'loginBoton'
+            );
+
+
+        function mostrarMensaje(
+            texto,
+            correcto = false
+        ) {
+
+            mensaje.textContent =
+                texto;
+
+            mensaje.className =
+                correcto
+                    ? 'login-mensaje ok'
+                    : 'login-mensaje';
+
+            mensaje.hidden = false;
+        }
+
+
+        form.addEventListener(
+            'submit',
+            async (evento) => {
+
+                evento.preventDefault();
+
+
+                const correoValor =
+                    correo.value.trim();
+
+
+                const contrasenaValor =
+                    contrasena.value;
+
+
+                if (
+                    !correoValor ||
+                    !contrasenaValor
+                ) {
+
+                    mostrarMensaje(
+                        'Ingresa el correo y la contraseña.'
+                    );
+
+                    return;
+                }
+
+
+                boton.disabled = true;
+
+                boton.textContent =
+                    'Ingresando…';
+
+                mensaje.hidden =
+                    true;
+
+
+                try {
+
+                    const respuesta =
+                        await fetch(
+                            '/api/auth/login',
+                            {
+                                method: 'POST',
+
+                                headers: {
+                                    'Content-Type':
+                                        'application/json'
+                                },
+
+                                body:
+                                    JSON.stringify({
+                                        correo:
+                                            correoValor,
+
+                                        contrasena:
+                                            contrasenaValor
+                                    })
+                            }
+                        );
+
+
+                    let datos = null;
+
+
+                    try {
+
+                        datos =
+                            await respuesta.json();
+
+                    } catch (_) {
+
+                        datos = null;
+
+                    }
+
+
+                    if (!respuesta.ok) {
+
+                        throw new Error(
+                            datos?.message ||
+                            'Correo o contraseña incorrectos.'
+                        );
+                    }
+
+
+                    /*
+                     * Guardamos solamente los datos
+                     * de la sesión.
+                     *
+                     * Los clientes, productos,
+                     * pedidos y pagos siguen
+                     * estando en H2.
+                     */
+
+                    localStorage.setItem(
+                        'usuarioActual',
+                        JSON.stringify(
+                            datos
+                        )
+                    );
+
+
+                    mostrarMensaje(
+                        'Inicio de sesión exitoso. Redirigiendo…',
+                        true
+                    );
+
+
+                    setTimeout(
+                        () => {
+
+                            window.location.href =
+                                '/dashboard';
+
+                        },
+                        500
+                    );
+
+
+                } catch (error) {
+
+                    console.error(
+                        'Error de login:',
+                        error
+                    );
+
+
+                    mostrarMensaje(
+                        error.message ||
+                        'No fue posible iniciar sesión.'
+                    );
+
+
+                } finally {
+
+                    boton.disabled =
+                        false;
+
+                    boton.textContent =
+                        'Iniciar sesión';
+
+                }
+
+            }
+        );
+
+
+    })();
+
+</script>
+
+</body>
+
+</html>

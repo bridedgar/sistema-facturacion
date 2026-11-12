@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.facturacion.sistema_facturacion.dto.pagodto;
+import com.facturacion.sistema_facturacion.model.dto.pagodto;
 import com.facturacion.sistema_facturacion.model.entity.pagoentity;
 import com.facturacion.sistema_facturacion.repository.pedidorepository;
 

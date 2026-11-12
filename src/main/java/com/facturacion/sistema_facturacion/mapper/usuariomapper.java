@@ -2,7 +2,7 @@ package com.facturacion.sistema_facturacion.mapper;
 
 import org.springframework.stereotype.Component;
 
-import com.facturacion.sistema_facturacion.dto.usuariodto;
+import com.facturacion.sistema_facturacion.model.dto.usuariodto;
 import com.facturacion.sistema_facturacion.model.entity.usuarioentity;
 
 @Component
